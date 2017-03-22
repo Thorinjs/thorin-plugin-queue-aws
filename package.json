@@ -1,0 +1,19 @@
+{
+  "name": "thorin-plugin-queue-aws",
+  "author": "UNLOQ Systems",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "2.30.0"
+  },
+  "description": "Thorin.js AWS SQS queue wrapper",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thorinjs/Thorin-plugin-queue-aws"
+  },
+  "homepage": "http://thorinjs.com",
+  "bugs": {
+    "url": "https://github.com/Thorinjs/Thorin-plugin-queue-aws/issues"
+  }
+}
