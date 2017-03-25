@@ -29,6 +29,7 @@ module.exports = function (thorin, opt, pluginName) {
       region: process.env.AWS_REGION || null          // AWS Region
     }
   };
+  let logger = thorin.logger(opt.logger);
   opt = thorin.util.extend(defaultOpt, opt);
   if (typeof opt.aws.accessKeyId === 'string') {
     opt.aws.key = opt.aws.accessKeyId;
