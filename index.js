@@ -55,15 +55,27 @@ module.exports = function (thorin, opt, pluginName) {
   let queueObj = initQueue(thorin, opt);
   queueObj.id = thorin.util.randomString(5);
 
+  let queueMap = {};  // map of {queueName:queueObj}
+
   /**
    * CREATE a separate queue
    * */
-  queueObj.create = (_opt) => {
+  queueObj.create = (_opt, name) => {
     if (typeof _opt !== 'object' || !_opt) _opt = {};
     _opt = thorin.util.extend(opt, _opt);
     let qObj = initQueue(thorin, _opt);
     qObj.id = thorin.util.randomString(4);
+    if (name) {
+      queueMap[name] = qObj;
+    }
     return qObj;
+  };
+
+  /**
+   * RETURN a previously created queue
+   * */
+  queueObj.get = (name) => {
+    return queueMap[name] || null;
   };
 
   return queueObj;
